@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="SEOGNG EUN의 포트폴리오" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="shortcut icon" href="img/moon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <title>SEONGEUN PORTFOLIO</title>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header_logo">
+            <a href="./index.html"><img src="./img/moon.ico" alt=""></a>
+        </div>
+
+        <nav class="header_nav">
+            <ul class="header_menu">
+                <li><a href="#work">WORKS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </header>
+
+    <section id="work_all">
+        <ul class="category">
+            <li>
+                <button class="category_button ii" data-category="all">
+                    <span>ALL</span>
+                </button>
+            </li>
+            <li>
+                <button class="category_button" data-category="figma">
+                    <span>FIGMA</span>
+                </button>
+            </li>
+            <li>
+                <button class="category_button" data-category="website">
+                    <span>WEBSITE</span>
+                </button>
+            </li>
+            <li>
+                <button class="category_button" data-category="mobile">
+                    <span>MOBILE</span>
+                </button>
+            </li>
+        </ul>
+
+
+        <div class="work_img">
+            <div data-aos="fade-up" class="work_01">
+                <div>
+                    <a href=""><img src="./img/tving.png" alt=""></a>
+                </div>
+
+                <div>
+                    <a href=""><img src="./img/팝콘.png"  alt=""></a>
+                </div>
+            </div>
+
+
+            <div data-aos="fade-up" class="work_02">
+                <div>
+                    <a href=""><img src="./img/이솝.png"  alt=""></a>
+                </div>
+                
+
+            </div>
+            <div data-aos="fade-up" class="work_03">
+                <div>
+                    <a href=""><img src="./img/찰스앤키스-pc.png" alt=""></a>
+                </div>
+
+                <div>
+                    <a href=""><img src="./img/cj-moc.png" alt=""></a>
+                </div>
+
+            </div>
+            <div data-aos="fade-up" class="work_04">
+                <div>
+                    <a href=""><img src="./img/black_up_mockup.png"  alt=""></a>
+                </div>
+
+                <div>
+                    <!-- <img src="./img/팝콘.png" width="350px" alt=""> -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer id="contact">
+
+    </footer>
+    <script>
+        AOS.init();
+
+
+        // work글자블러
+        document.addEventListener("DOMContentLoaded", function () {
+            const allButton = document.querySelector('.category_button[data-category="all"]');
+            const allButtonSpan = allButton.querySelector('span');
+            const otherButtons = document.querySelectorAll('.category_button:not([data-category="all"])');
+
+            otherButtons.forEach(function (button) {
+                button.addEventListener('mouseenter', function () {
+                    allButtonSpan.style.filter = 'blur(1.5px)';
+                });
+
+                button.addEventListener('mouseleave', function () {
+                    allButtonSpan.style.filter = 'blur(0)';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
