@@ -20,6 +20,11 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: black;
+    /* min-width: 1800px; */
+}
+
 ul {
     list-style: none;
 }
@@ -54,9 +59,17 @@ header {
     line-height: 100px;
     right: 0;
     position: absolute;
-    height: 100px;
     width: 210px;
 }
+
+.header_nav .open {
+    position: absolute;
+    width: 500px;
+    background-color: yellowgreen;
+    height: 200px;
+}
+
+
 
 .header_nav .header_menu {
     display: flex;
@@ -82,34 +95,26 @@ header {
 .line {
     width: 100%;
     height: 3px;
+    right: 0;
     background-color: rgb(255, 255, 255);
     position: absolute;
-    transition: transform 0.3s;
 }
 
-.line:nth-child(1) {
-    top: 0;
-    transform-origin: left center;
-}
-
-.line:nth-child(2) {
-    bottom: 0;
-    transform-origin: left center;
-}
-
-.menu-open .line:nth-child(1) {
-    transform: rotate(45deg);
-}
-
-.menu-open .line:nth-child(2) {
-    transform: rotate(-45deg);
-}
 
 #work_all {
+    padding-top: 50px;
+    background-color: rgb(0, 0, 0);
     position: relative;
     width: 100%;
-    background-color: rgb(0, 0, 0);
-    height: 1000px;
+
+}
+
+#work_all>h2 {
+    height: 50px;
+    line-height: 50px;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #fff;
 }
 
 .category {
@@ -117,13 +122,12 @@ header {
     justify-content: center;
     padding-top: 50px;
     gap: 1rem;
-    background-color: rgb(0, 0, 0);
+    height: 100px;
 }
 
 .category_button {
     position: relative;
     color: rgb(255, 255, 255);
-    font-size: 1.1rem;
     padding: 0.5rem 2rem;
     border-radius: 10px;
     border: 1px solid rgb(119, 141, 255);
@@ -131,19 +135,22 @@ header {
     cursor: pointer;
 }
 
-.category_button[data-category="all"] {
-    filter: blur(0);
-    transition: none;
+
+.category_button span.active {
+    color: white;
+
 }
 
-.category_button>span {
-    font-size: 1.2rem;
-    filter: blur(1.6px);
+.category_button:not(.active) span {
+    filter: blur(1.5px);
     transition: filter 0.1s;
 }
 
-.category_button>span:hover {
-    filter: blur(0);
+.category_button>span {
+    color: white;
+    font-size: 1.2rem;
+    filter: blur(1.6px);
+    transition: filter 0.1s;
 }
 
 .work_img {
@@ -167,7 +174,6 @@ header {
     position: absolute;
     border-radius: 30px;
     border: 1px solid rgb(119, 141, 255);
-    /* background-color: rgb(119, 141, 255); */
     top: 0px;
     height: 280px;
     width: 350px;
@@ -287,25 +293,25 @@ header {
     color: #fff;
 }
 
-#contact>section {
+#contact section {
     color: #fff;
-    position: relative;
-    display: flex;
-    gap: 150px;
-    justify-content: center;
-    width: 100%;
-    line-height: 200px;
-    background-color: rgb(0, 0, 0);
     height: 200px;
+    display: flex;
+    justify-content: center;
 }
 
-#contact>section>div {
-    text-align: center;
-    display: flex;
+#contact section>div {
+    margin: 0 30px;
+    position: relative;
 }
-#contact>section>div>span{
-    display: block;
+
+#contact section>div>span {
+    position: absolute;
+    top: 75px;
+    left: -27px;
 }
-#contact>section>div>p {
+
+#contact section>div>p {
+    line-height: 170px;
     font-size: 1.5rem;
 }
