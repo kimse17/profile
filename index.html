@@ -7,6 +7,7 @@
     <meta property="og:title" content="SEOGNG EUN의 포트폴리오" />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/media.css">
     <link rel="shortcut icon" href="img/moon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <title>SEONGEUN PORTFOLIO</title>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="./js/index.js"></script>
 </head>
 
 <body>
@@ -36,75 +38,68 @@
             <div class="line"></div>
         </div>
     </header>
+
     <section id="work_all">
         <h2>WORKS</h2>
         <ul class="category">
             <li>
-                <button class="category_button ii" data-category="all">
-                    <span>ALL</span>
+                <button class="category_button">
+                    <span data-category="all">ALL</span>
                 </button>
             </li>
             <li>
-                <button class="category_button" data-category="figma">
-                    <span>FIGMA</span>
+                <button class="category_button">
+                    <span data-category="figma">FIGMA</span>
                 </button>
             </li>
             <li>
-                <button class="category_button" data-category="website">
-                    <span>WEBSITE</span>
+                <button class="category_button">
+                    <span data-category="website">WEBSITE</span>
                 </button>
             </li>
             <li>
-                <button class="category_button" data-category="mobile">
-                    <span>MOBILE</span>
+                <button class="category_button">
+                    <span data-category="mobile">MOBILE</span>
                 </button>
             </li>
         </ul>
 
 
         <div class="work_img">
-
             <div data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine" class="work_01">
-                <div>
+                <div class="project" data-type="figma">
                     <a href="https://www.figma.com/proto/NlQFchMRW1NgkUIxBGU1tz/tving-figma?node-id=76-391&t=ju2jZJrhGAxNkYvG-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=76%3A391"
                         target="_blank"><img src="./img/tving.png" alt=""></a>
                 </div>
-
-                <div>
+                <div class="project" data-type="website">
                     <a href="https://kimse17.github.io/home_page/index" target="_blank"><img src="./img/팝콘.png"
                             alt=""></a>
                 </div>
             </div>
-
-
             <div data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-sine" class="work_02">
-                <div>
+                <div class="project" data-type="figma">
                     <a href="https://www.figma.com/proto/UPdLQjIxywRynNPyBwInBz/%EC%9D%B4%EC%86%9D-figma?node-id=146-120&t=53Iv1MuHSNlVJNsr-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=146%3A120"
                         target="_blank"><img src="./img/이솝.png" alt=""></a>
                 </div>
             </div>
-
             <div data-aos="fade-down" data-aos-duration="1200" data-aos-easing="ease-in-sine" class="work_03">
-                <div>
+                <div class="project" data-type="mobile">
                     <a href="https://kimse17.github.io/CHARLESKEITH/" target="_blank"><img src="./img/찰스앤키스-pc.png"
                             alt=""></a>
                 </div>
-
-                <div>
+                <div class="project" data-type="mobile">
                     <a href="https://kimse17.github.io/cj/" target="_blank"><img src="./img/cj-moc.png" alt=""></a>
                 </div>
 
             </div>
             <div data-aos="fade-left" data-aos-duration="1400" data-aos-easing="ease-in-sine" class="work_04">
-                <div>
+                <div class="project" data-type="website">
                     <a href="https://kimse17.github.io/BLACK_UP/" target="_blank"><img src="./img/black_up_mockup.png"
                             alt=""></a>
                 </div>
-
                 <div>
-                    <img src="" width="350px" alt="react_app">
+                    <img src="" alt="react_app">
                 </div>
-
             </div>
         </div>
     </section>
@@ -131,23 +126,14 @@
         </section>
     </footer>
     <script>
-        AOS.init();
-
-
-        // work글자블러
-        document.addEventListener("DOMContentLoaded", function () {
-            const allButton = document.querySelector('.category_button[data-category="all"]');
-            const allButtonSpan = allButton.querySelector('span');
-            const otherButtons = document.querySelectorAll('.category_button:not([data-category="all"])');
-
-            otherButtons.forEach(function (button) {
-                button.addEventListener('mouseenter', function () {
-                    allButtonSpan.style.filter = 'blur(1.5px)';
-                });
-
-                button.addEventListener('mouseleave', function () {
-                    allButtonSpan.style.filter = 'blur(0)';
-                });
+        document.querySelector(".header_menu li a").addEventListener("click", function (event) {
+            event.preventDefault(); // 기본 동작인 링크 이동을 막음
+            const element = document.querySelector('#work_all');
+            const rect = element.getBoundingClientRect();
+            console.log('Y축값:', rect.top);
+            window.scrollTo({
+                top: rect.top,
+                behavior: 'smooth' // 부드러운 스크롤
             });
         });
     </script>
