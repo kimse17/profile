@@ -135,7 +135,9 @@ header {
     cursor: pointer;
 }
 
-
+.category_button:hover{
+    filter: none;
+}
 .category_button span.active {
     color: white;
 
