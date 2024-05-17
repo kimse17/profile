@@ -95,6 +95,7 @@
 
     .category_button span.active {
         color: white;
+
     }
 
     .category_button:not(.active) span {
