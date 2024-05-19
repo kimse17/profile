@@ -48,7 +48,13 @@
         text-align: center;
         color: #081f5c;
     }
-
+    #work_all>p{
+        top: 210px;
+        right: 40px;
+        position: absolute;
+        font-size: 1.0rem;
+        color: #081f5c; 
+    }
     .category {
         display: flex;
         justify-content: center;
