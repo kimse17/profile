@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // 클릭된 버튼에 'active' 클래스 추가
             btn.classList.add('active');
 
+
+
+
+
             // 모든 버튼의 자식 span 요소에 필터 효과 적용
             btns.forEach(function (btn) {
                 const span = btn.querySelector('span');
@@ -36,12 +40,14 @@ document.addEventListener("DOMContentLoaded", function () {
 // 테이터 호출 버튼
 const categories = document.querySelector('.category');
 const projects = document.querySelectorAll('.project');
+var test = document.getElementsByClassName("category_button");
 categories.addEventListener('click', (event) => {
     console.log(event);
     const filter = event.target.dataset.category;
     console.log(filter);
     projects.forEach((project) => {
         console.log(project.dataset.type);
+        console.log(test.children);
         if (filter === 'all' || filter === project.dataset.type) {
             project.style.display = 'block';
         } else {
