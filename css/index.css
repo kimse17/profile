@@ -114,7 +114,13 @@ header {
     text-align: center;
     color: #081f5c;
 }
-
+#work_all>p{
+    top: 210px;
+    right: 300px;
+    position: absolute;
+    font-size: 1.2rem;
+    color: #081f5c; 
+}
 .category {
     display: flex;
     justify-content: center;
