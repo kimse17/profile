@@ -43,22 +43,22 @@
         <h2>WORKS</h2>
         <ul class="category">
             <li>
-                <button class="category_button">
-                    <span data-category="all">ALL</span>
+                <button class="category_button" data-category="all">
+                    <span  data-category="all">ALL</span>
                 </button>
             </li>
             <li>
-                <button class="category_button">
+                <button class="category_button" data-category="figma">
                     <span data-category="figma">FIGMA</span>
                 </button>
             </li>
             <li>
-                <button class="category_button">
+                <button class="category_button" data-category="website">
                     <span data-category="website">WEBSITE</span>
                 </button>
             </li>
             <li>
-                <button class="category_button">
+                <button class="category_button" data-category="mobile">
                     <span data-category="mobile">MOBILE</span>
                 </button>
             </li>
@@ -97,8 +97,9 @@
                     <a href="https://kimse17.github.io/BLACK_UP/" target="_blank"><img src="./img/black_up_mockup.png"
                             alt=""></a>
                 </div>
-                <div>
-                    <img src="" alt="react_app">
+                <div class="project" data-type="website">
+                    <a href="https://kimse17.github.io/home_page/index" target="_blank"><img src="./img/팝콘.png"
+                            alt=""></a>
                 </div>
             </div>
         </div>
@@ -125,18 +126,7 @@
             </div>
         </section>
     </footer>
-    <script>
-        document.querySelector(".header_menu li a").addEventListener("click", function (event) {
-            event.preventDefault(); // 기본 동작인 링크 이동을 막음
-            const element = document.querySelector('#work_all');
-            const rect = element.getBoundingClientRect();
-            console.log('Y축값:', rect.top);
-            window.scrollTo({
-                top: rect.top,
-                behavior: 'smooth' // 부드러운 스크롤
-            });
-        });
-    </script>
+
 </body>
 
 </html>
