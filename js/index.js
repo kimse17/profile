@@ -40,14 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
 // 테이터 호출 버튼
 const categories = document.querySelector('.category');
 const projects = document.querySelectorAll('.project');
-var test = document.getElementsByClassName("category_button");
 categories.addEventListener('click', (event) => {
     console.log(event);
     const filter = event.target.dataset.category;
     console.log(filter);
     projects.forEach((project) => {
         console.log(project.dataset.type);
-        console.log(test.children);
         if (filter === 'all' || filter === project.dataset.type) {
             project.style.display = 'block';
         } else {
@@ -58,3 +56,16 @@ categories.addEventListener('click', (event) => {
         }
     })
 })
+
+
+
+document.querySelector(".header_menu li a").addEventListener("click", function (event) {
+    event.preventDefault(); // 기본 동작인 링크 이동을 막음
+    const element = document.querySelector('#work_all');
+    const rect = element.getBoundingClientRect();
+    console.log('Y축값:', rect.top);
+    window.scrollTo({
+        top: rect.top,
+        behavior: 'smooth' // 스크롤 부드럽게
+    });
+});
